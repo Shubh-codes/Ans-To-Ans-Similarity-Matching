@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/style.css" rel="stylesheet">
+
+    <title>Give Answer</title>    
+  </head>
+  <body>
+	<div class="container">
+		{% include "header.html" %}	
+		<form action="{{url_for('result')}}" method="POST">
+			<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+			  <thead>
+			    <tr>
+			      <th class="th-sm" style="width: 40%">Question</th>
+			      <th class="th-sm" style="width: 60%">Answer</th>      
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	
+			  	{% for questions in quest %}
+					
+				    <tr>
+				      <td style="width: 40%">{{ questions['question'] }}</td>
+				      <td style="width: 60%">
+				      	<input type="hidden" id="id[]" name="id[]" value="{{ questions['_id'] }}">
+				      	<input type="hidden" id="question[]" name="question[]" value="{{ questions['question'] }}">
+				      	<textarea class="form-control" id="youranswer[]" name="youranswer[]" rows="10" cols="100"></textarea>
+				      </td>			      
+				    </tr> 
+				    
+				  
+			    {%  endfor %}  
+			</table>
+			<button type="submit" class="btn btn-primary">Submit</button>
+			<a href="{{ url_for('index') }}" class="btn btn-primary">Go Back</a>
+		</form>			
+		{% include "footer.html" %}
+	</div>  	
+  </body>
+</html>
+
+
+
+
+
+
+
+

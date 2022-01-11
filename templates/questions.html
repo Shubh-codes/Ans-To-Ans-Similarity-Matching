@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Hello, world!</title>    
+  </head>
+  <body>
+	<div class="container">
+		{% include "header.html" %}		
+		<div class="row">
+			<div class="col-md-3">
+			</div>
+			<div class="col-md-6">
+				<form action="{{url_for('questions')}}" method="POST">
+				  <div class="mb-3">
+				    <div class="mb-3">
+					    <label for="exampleInputPassword1" class="form-label">Question</label>
+					    <input type="text" class="form-control" id="question" name="question">
+					  </div>   
+				  </div>
+				  <div class="mb-3">
+				    <label for="exampleInputPassword1" class="form-label">Answer</label>
+				    <input type="text" class="form-control" id="answer" name="answer" required="">
+				  </div>
+				  <button type="submit" class="btn btn-primary">Submit</button>
+				  <a href="{{ url_for('index') }}" class="btn btn-primary">Go Back</a>
+				</form>
+				<center><div class="msg">{{ msg }}</div></center>
+			</div>
+			<div class="col-md-3">
+			</div>
+		</div>
+			
+		{% include "header.html" %}
+	</div>  	
+  </body>
+</html>
+
+
+

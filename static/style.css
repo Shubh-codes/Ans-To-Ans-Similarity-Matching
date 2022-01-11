@@ -1,0 +1,15 @@
+div#dtBasicExample_length {
+    display: none;
+}
+div#dtBasicExample_filter {
+    display: none;
+}
+table.dataTable thead .sorting_asc:after {
+    content: "\e155";
+    display: none;
+}
+table.dataTable thead .sorting:after {
+    opacity: 0.2;
+    content: "\e150";
+    display: none;
+}
