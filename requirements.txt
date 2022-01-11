@@ -1,1 +1,3 @@
 gunicorn
+spacy
+nltk
